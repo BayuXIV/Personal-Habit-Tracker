@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:personal_habit_tracker/cores/configs/router.dart';
+import 'package:personal_habit_tracker/cores/constants/design_size.dart';
 import 'package:personal_habit_tracker/cores/utils/hive_helper.dart';
 
 void main() async {
@@ -16,12 +18,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: true,
-      // navigatorKey: NavigationService.navigationKey,
-      title: 'Personal Habit Tracker',
-      onGenerateRoute: RouteGenerator.generateRoute,
-      initialRoute: 'home',
+    return const ScreenUtilInit(
+      designSize: designSize,
+      minTextAdapt: true,
+      child: MaterialApp(
+        debugShowCheckedModeBanner: true,
+        // navigatorKey: NavigationService.navigationKey,
+        title: 'Personal Habit Tracker',
+        onGenerateRoute: RouteGenerator.generateRoute,
+        initialRoute: 'home',
+      ),
     );
   }
 }
