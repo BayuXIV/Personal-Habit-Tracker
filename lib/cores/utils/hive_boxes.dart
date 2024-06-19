@@ -1,1 +1,1 @@
-const String schedules = 'schedules';
+const String habit = 'habit';
