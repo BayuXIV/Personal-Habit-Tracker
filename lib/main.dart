@@ -18,15 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ScreenUtilInit(
+    return ScreenUtilInit(
       designSize: designSize,
       minTextAdapt: true,
-      child: MaterialApp(
+      child: MaterialApp.router(
         debugShowCheckedModeBanner: true,
         // navigatorKey: NavigationService.navigationKey,
         title: 'Personal Habit Tracker',
-        onGenerateRoute: RouteGenerator.generateRoute,
-        initialRoute: 'home',
+        routerConfig: router,
       ),
     );
   }
