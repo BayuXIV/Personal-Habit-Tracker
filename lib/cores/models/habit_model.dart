@@ -12,11 +12,11 @@ class HabitModel {
   String name;
 
   @HiveField(2)
-  List<int> schedulesInMilliseconds;
+  List<int> schedulesInMillisecond;
 
   HabitModel({
     required this.id,
     required this.name,
-    required this.schedulesInMilliseconds,
+    required this.schedulesInMillisecond,
   });
 }
