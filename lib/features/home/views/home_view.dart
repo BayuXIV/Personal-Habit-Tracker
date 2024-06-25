@@ -9,38 +9,36 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        child: CustomScrollView(
-          physics: const ClampingScrollPhysics(),
-          slivers: <Widget>[
-            SliverAppBar(
-              stretch: true,
-              expandedHeight: 100.h,
-              backgroundColor: Colors.white,
-              flexibleSpace: const FlexibleSpaceBar(
-                title: Text("Personal Habit Tracker"),
-              ),
-              forceElevated: true,
-              shadowColor: Colors.black,
+      body: CustomScrollView(
+        physics: const ClampingScrollPhysics(),
+        slivers: <Widget>[
+          SliverAppBar(
+            stretch: true,
+            expandedHeight: 100.h,
+            backgroundColor: Colors.white,
+            flexibleSpace: const FlexibleSpaceBar(
+              title: Text("Personal Habit Tracker", style: TextStyle(fontSize: 16)),
             ),
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: JuneBuilder(
-                  () => HomeVM(context: context),
-                  builder: (vm) => const Column(
-                    children: [
-                      Text(
-                        "Looks like you don't have any habit added into the list,\nlet's add them now!",
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
+            forceElevated: true,
+            shadowColor: Colors.black,
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: JuneBuilder(
+                () => HomeVM(context: context),
+                builder: (vm) => const Column(
+                  children: [
+                    Text(
+                      "Looks like you don't have any habit added into the list,\nlet's add them now!",
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed:
