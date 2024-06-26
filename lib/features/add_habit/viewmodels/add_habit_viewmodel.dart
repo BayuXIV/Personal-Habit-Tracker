@@ -14,7 +14,6 @@ class AddHabitVM extends JuneState with FormValidatorMixin {
 
   selectType(String name) {
     selectedType = name;
-    print(selectedType);
     setState();
   }
 
